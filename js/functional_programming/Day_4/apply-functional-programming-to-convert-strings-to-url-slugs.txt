@@ -1,0 +1,6 @@
+// Only change code below this line
+function urlSlug(title) {
+return title.split(" ").filter(item => item).map(item => item.toLowerCase()).join("-");
+
+}
+// Only change code above this line
