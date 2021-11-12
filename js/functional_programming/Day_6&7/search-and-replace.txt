@@ -1,0 +1,17 @@
+function myReplace(str, before, after) {
+  if ((before.charAt(0).match(/[A-Z]/) && after.charAt(0).match(/[A-Z]/) || (before.charAt(0).match(/[a-z]/) && after.charAt(0).match(/[a-z]/)))) {
+     return str.replace(before, after);
+  }else if (before.charAt(0).match(/[A-Z]/)) {
+    const test = after.split("");
+    test[0] = test[0].toUpperCase();
+    after = test.join("");
+  } else if (before.charAt(0).match(/[a-z]/)) {
+    const test = after.split("");
+    test[0] = test[0].toLowerCase();
+    after = test.join("");
+  }
+  return str.replace(before, after);
+}
+
+
+myReplace("A quick brown fox jumped over the lazy dog", "jumped", "leaped");

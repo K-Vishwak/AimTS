@@ -1,0 +1,19 @@
+function translatePigLatin(str) {
+  const vowelList = ['a', 'e', 'i', 'o', 'u'];
+  const strArr = str.split("");
+  const consArr = [];
+  let remArr = [];
+  for (let i=0; i<strArr.length;i++) {
+    if (!vowelList.includes(strArr[i])){
+        consArr.push(strArr[i]);
+    } else {
+       remArr = strArr.slice(i);
+      break;
+    }
+  }
+  const lastStr = consArr.length > 0 ? 'ay' : 'way';
+  str = remArr.join("")+consArr.join("")+lastStr;
+  return str;
+}
+
+translatePigLatin("consonant");

@@ -1,0 +1,22 @@
+function whatIsInAName(collection, source) {
+  let arr = [];
+  // Only change code below this line
+   arr = collection.filter(item=>{
+      
+        let count = 0;
+        if (Object.keys(source).length <= Object.keys(item).length) {
+            Object.keys(source).forEach(sourceKey=>{
+                if (item.hasOwnProperty(sourceKey) && source[sourceKey] === item[sourceKey]) {
+                   count++;
+                }
+            }
+            );
+        }
+        return Object.keys(source).length === count;
+    }
+    );
+  // Only change code above this line
+  return arr;
+}
+
+whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" });
