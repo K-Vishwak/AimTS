@@ -1,0 +1,10 @@
+function uniteUnique(...arr) {
+  const result = [];
+  for (let i=0; i<arr.length;i++) {
+    result.push(...arr[i]);
+  }
+  const final = result.filter((item, index, array) => array.indexOf(item)=== index)
+  return final;
+}
+
+uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]);

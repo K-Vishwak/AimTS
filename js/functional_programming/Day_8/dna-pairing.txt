@@ -1,0 +1,15 @@
+function pairElement(str) {
+  const at = {A : ['A', 'T'], T: ['T', 'A']};
+  const cg = {C : ['C', 'G'], G: ['G', 'C']};
+  let temp = [];
+  str.split('').forEach(char => {
+    if (at[char]){
+      temp.push(at[char]);
+    } else {
+      temp.push(cg[char]);
+    }
+  });
+  return temp;
+}
+
+pairElement("GCG");

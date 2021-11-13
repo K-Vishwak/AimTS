@@ -1,0 +1,16 @@
+function fearNotLetter(str) {
+  const diff = str.charCodeAt(str.length-1) - str.charCodeAt(0);
+  if (str.length === (diff + 1)) {
+    return undefined;
+  }
+  let char;
+  for(let i= 0 ; i<str.length;i++) {
+    if ((str.charCodeAt(i+1) - str.charCodeAt(i)) > 1){
+      char = String.fromCharCode(str.charCodeAt(i)+1);
+      break;
+    }
+  }
+  return char;
+}
+
+fearNotLetter("abce");
