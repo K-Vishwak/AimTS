@@ -1,0 +1,21 @@
+function rot13(str) {
+  const alphabets = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+  let newStr='';
+  for (let i=0; i<str.length; i++) {
+    const character = str.charAt(i);
+    const charIndex = alphabets.indexOf(character);
+    if (!alphabets.includes(character)) {
+      newStr+=character;
+    } else {
+      let count = 26 - (charIndex + 1);
+      if (count >= 0 && count < 13) {
+        newStr+=alphabets[13-count-1];
+      } else {
+        newStr+=alphabets[charIndex + 13];
+      }
+    }
+  }
+  return newStr;
+}
+
+rot13("SERR PBQR PNZC");
