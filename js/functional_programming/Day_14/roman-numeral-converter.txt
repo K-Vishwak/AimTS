@@ -1,0 +1,14 @@
+function convertToRoman(num) {
+  const breakPointMappins = {M: 1000, CM:900, D: 500, CD: 400, C:100, XC: 90, L:50, XL:40, X:10, IX: 9, V:5, IV: 4, I: 1};
+const values = Object.values(breakPointMappins);
+let romanNumber = '';
+for (let i in values) {
+  while(num - values[i] >= 0) {
+    romanNumber+=Object.keys(breakPointMappins)[i];
+    num-=values[i];
+  }
+}
+ return romanNumber;
+}
+
+convertToRoman(36);
