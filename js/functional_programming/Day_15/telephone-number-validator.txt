@@ -1,8 +1,0 @@
-function telephoneCheck(str) {
-  if (str.length < 10 || str.match(/([*?]|^\(+\d*\w*\)+$)/) || str.match(/^([2|0]|([-](1)))/) || str.split(/[\(/)]/).length ===2 || str.match(/([1][0])+/) || str.match(/^([5][5][\s])+/) || str.match(/^[\(][2]+/)) {
-    return false;
-  }
-  return /^[0-9]*\s*(\d{3}-|\(\d{3}\)\s)*(\d{3})*(-\d{1,4})*/.test(str);
-}
-
-telephoneCheck("555-555-5555");
